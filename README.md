@@ -6,8 +6,6 @@
 
 基于 [ViT](https://huggingface.co/nlpconnect/vit-gpt2-image-captioning) 和 [ChatGPT](https://openai.com/chatgpt) 混合模型开发的全新问答系统！
 
-[![Contributors](https://img.shields.io/badge/Contributors-3-1e88e5)](/src/contributors.html)
-[![Code](https://img.shields.io/badge/-Code-orange)](/src/vqa.py)
 [![Structure](https://img.shields.io/badge/-Structure-7e57c2)](/src/structure.html)
 
 </div>
