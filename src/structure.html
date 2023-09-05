@@ -1,0 +1,36 @@
+<h1>项目结构</h1>
+
+<p>"问春" 是一个可视化的多模型视觉问答系统, 下面将对其中使用到的模型, 组件和函数进行详细分析:</p>
+
+<h2>模型</h2>
+
+<ul>
+<li><p>ViltForQuestionAnswering: 作为一个训练后的 ViLT 模型, 它能够对给定的图像和问题文本进行答案预测;</p></li>
+<li><p>ViltProcessor: 这是一个用于将图像和问题文本转换为模型输入特征的处理器, 它来自于 ViLT 模型 (Vision-and-Language Transformer), 用于处理视觉问答任务;</p></li>
+<li><p>VisionEncoderDecoderModel: 一个视觉编码器-语言解码器模型, 用于生成图像的标题描述. 它使用了一个 Transformer 编码器来编码图像, 并使用一个 Transformer 解码器来生成文本描述;</p></li>
+<li><p>ViTImageProcessor: 用于从图片中提取特征. 作为一个训练后的图像编码器, 它可以将图片转换为模型可以理解的特征向量.</p></li>
+</ul>
+
+<h2>组件</h2>
+
+<ul>
+<li><p>AutoTokenizer: 这是一个用于根据模型自动选择合适的 tokenizer 的工具, 它能够自动从模型中选择对应的 tokenizer;</p></li>
+<li><p>Gradio: 一个交互式的界面库, 用于构建交互式的应用程序. 在本项目中, Gradio 用于构建一个简洁的交互式应用程序, 使用户可以通过输入图片和问题来获取答案;</p></li>
+<li><p>PIL (Python Imaging Library): 这是一个Python图像处理库, 用于处理图像的大小, 模式等;</p></li>
+<li><p>Torch: 一个深度学习框架, 用于训练和部署神经网络. 在本项目中, Torch 用于将模型部署到 GPU 上, 并用于执行前向传递和生成对应文本.</p></li>
+</ul>
+
+<h2>函数</h2>
+
+<ul>
+<li><p>give_answer(): 用于处理图像和问题文本并返回预测答案的函数. 它调用了 ViltProcessor 和 ViltForQuestionAnswering 模型来处理输入, 返回模型的预测结果, 同时也调用了 predict_step 函数来生成图像的标题描述, 从而实现图像描述与预测结果的合并.</p></li>
+<li><p>predict_step(): 用于生成图像标题描述的函数. 它使用了 ViTImageProcessor 和 VisionEncoderDecoderModel 模型来处理输入的图像, 然后调用 tokenizer 生成图像描述.</p></li>
+</ul>
+
+<h1>项目流程</h1>
+
+<div align='center'>
+
+<img src=..\fig\flow.jpg width=75%/>
+
+</div>
