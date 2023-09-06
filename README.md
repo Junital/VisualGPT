@@ -1,8 +1,7 @@
 <div align='center'>
 
-<img src = ./fig/header.jpg/>
+<img src = ./fig/logo.png width=50%>
 
-# Visual GPT
 
 基于 [ViT](https://huggingface.co/nlpconnect/vit-gpt2-image-captioning) 和 [ChatGPT](https://openai.com/chatgpt) 混合模型开发的全新问答系统！
 
