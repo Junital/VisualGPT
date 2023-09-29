@@ -40,7 +40,7 @@
 
 <div align='center'>
 
-<img src=./fig/vqa.gif width=100%/>
+<img src=./fig/System.gif width=100%/>
 
 </div>
 
